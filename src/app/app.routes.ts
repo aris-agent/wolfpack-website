@@ -1,16 +1,10 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ServicesComponent } from './services/services.component';
-import { AboutComponent } from './about/about.component';
-import { BlogComponent } from './blog/blog.component';
-import { BlogPostComponent } from './blog-post/blog-post.component';
-import { ContactComponent } from './contact/contact.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'services', component: ServicesComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'blog', component: BlogComponent },
-  { path: 'blog/:id', component: BlogPostComponent },
-  { path: 'contact', component: ContactComponent },
+  { path: '', loadComponent: () => import('./home/home').then(m => m.Home) },
+  { path: 'services', loadComponent: () => import('./services/services').then(m => m.Services) },
+  { path: 'about', loadComponent: () => import('./about/about').then(m => m.About) },
+  { path: 'blog', loadComponent: () => import('./blog/blog').then(m => m.Blog) },
+  { path: 'blog/:id', loadComponent: () => import('./blog-post/blog-post').then(m => m.BlogPost) },
+  { path: 'contact', loadComponent: () => import('./contact/contact').then(m => m.Contact) },
 ];

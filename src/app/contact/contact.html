@@ -1,7 +1,28 @@
 <h1>Contact Us</h1>
-<form>
-  <label>Name: <input type="text"></label>
-  <label>Email: <input type="email"></label>
-  <label>Message: <textarea></textarea></label>
-  <button type="submit">Send</button>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" required>
+    <mat-error *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+      Name is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email" required>
+    <mat-error *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+      Please enter a valid email
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Message</mat-label>
+    <textarea matInput formControlName="message" rows="5" required></textarea>
+    <mat-error *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+      Message is required
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid">Send Message</button>
 </form>

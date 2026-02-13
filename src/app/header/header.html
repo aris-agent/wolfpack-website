@@ -1,7 +1,26 @@
-<nav>
-  <a routerLink="/">Home</a>
-  <a routerLink="/services">Services</a>
-  <a routerLink="/about">About</a>
-  <a routerLink="/blog">Blog</a>
-  <a routerLink="/contact">Contact</a>
-</nav>
+<mat-toolbar color="primary">
+  <span>Wolfpack</span>
+  <span class="spacer"></span>
+  <nav class="desktop-nav">
+    <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a mat-button routerLink="/services" routerLinkActive="active">Services</a>
+    <a mat-button routerLink="/about" routerLinkActive="active">About</a>
+    <a mat-button routerLink="/blog" routerLinkActive="active">Blog</a>
+    <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
+  </nav>
+  <button mat-icon-button (click)="toggleMenu()" class="mobile-menu-button">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="over" [(opened)]="menuOpen" class="mobile-nav">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleMenu()">Home</a>
+      <a mat-list-item routerLink="/services" routerLinkActive="active" (click)="toggleMenu()">Services</a>
+      <a mat-list-item routerLink="/about" routerLinkActive="active" (click)="toggleMenu()">About</a>
+      <a mat-list-item routerLink="/blog" routerLinkActive="active" (click)="toggleMenu()">Blog</a>
+      <a mat-list-item routerLink="/contact" routerLinkActive="active" (click)="toggleMenu()">Contact</a>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>
