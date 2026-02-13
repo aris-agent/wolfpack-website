@@ -1,16 +1,11 @@
 .nav-link {
-  @apply text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors relative;
+  @apply px-4 py-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-200;
 }
 
 .nav-link.active-link {
-  @apply text-blue-600 dark:text-blue-400;
-}
-
-.nav-link.active-link::after {
-  content: '';
-  @apply absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600;
+  @apply bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 font-semibold;
 }
 
 .active-mobile {
-  @apply bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-semibold;
+  @apply bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 font-semibold;
 }

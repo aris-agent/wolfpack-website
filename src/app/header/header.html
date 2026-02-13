@@ -1,16 +1,16 @@
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-md">
   <div class="container mx-auto px-4">
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
-      <a routerLink="/" class="flex items-center space-x-2 group">
-        <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform">
-          <mat-icon class="text-white">rocket_launch</mat-icon>
+      <a routerLink="/" class="flex items-center gap-2 group">
+        <div class="w-10 h-10 bg-gradient-to-br from-emerald-600 to-teal-600 dark:from-emerald-500 dark:to-teal-500 rounded-xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-md">
+          <lucide-icon name="rocket" class="w-6 h-6 text-white"></lucide-icon>
         </div>
-        <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Wolfpack</span>
+        <span class="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-400 bg-clip-text text-transparent">Wolfpack</span>
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center space-x-1">
+      <div class="hidden md:flex items-center gap-1">
         <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" 
            class="nav-link">Home</a>
         <a mat-button routerLink="/services" routerLinkActive="active-link" 
@@ -22,54 +22,121 @@
         <a mat-button routerLink="/contact" routerLinkActive="active-link" 
            class="nav-link">Contact</a>
         
-        <!-- Dark Mode Toggle -->
-        <button mat-icon-button (click)="toggleDarkMode()" 
-                class="ml-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
-                [attr.aria-label]="darkMode() ? 'Switch to light mode' : 'Switch to dark mode'">
-          <mat-icon>{{ darkMode() ? 'light_mode' : 'dark_mode' }}</mat-icon>
-        </button>
+        <!-- Enhanced Dark Mode Toggle -->
+        <div class="flex items-center gap-2 ml-4">
+          <span class="text-xs text-slate-600 dark:text-slate-400 hidden lg:inline">
+            {{ darkMode() ? 'Dark' : 'Light' }}
+          </span>
+          <button
+            (click)="toggleDarkMode()"
+            class="relative inline-flex h-7 w-14 items-center rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+            [ngClass]="{
+              'bg-slate-700': darkMode(),
+              'bg-slate-200': !darkMode()
+            }"
+            role="switch"
+            [attr.aria-checked]="darkMode()"
+            [attr.aria-label]="darkMode() ? 'Switch to light mode' : 'Switch to dark mode'"
+          >
+            <!-- Toggle Circle with Icon -->
+            <span
+              class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white dark:bg-slate-900 shadow-lg transform transition-all duration-300 ease-in-out"
+              [ngClass]="{
+                'translate-x-7': darkMode(),
+                'translate-x-1': !darkMode()
+              }"
+            >
+              <!-- Sun Icon (Light Mode) -->
+              <lucide-icon 
+                *ngIf="!darkMode()"
+                name="sun" 
+                class="h-4 w-4 text-amber-500 transition-opacity duration-200"
+              ></lucide-icon>
+              
+              <!-- Moon Icon (Dark Mode) -->
+              <lucide-icon 
+                *ngIf="darkMode()"
+                name="moon" 
+                class="h-4 w-4 text-emerald-400 transition-opacity duration-200"
+              ></lucide-icon>
+            </span>
+          </button>
+        </div>
       </div>
 
       <!-- Mobile Menu Button -->
-      <div class="md:hidden flex items-center space-x-2">
-        <button mat-icon-button (click)="toggleDarkMode()" 
-                class="text-gray-700 dark:text-gray-300"
-                [attr.aria-label]="darkMode() ? 'Switch to light mode' : 'Switch to dark mode'">
-          <mat-icon>{{ darkMode() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+      <div class="md:hidden flex items-center gap-2">
+        <!-- Mobile Dark Mode Toggle -->
+        <button
+          (click)="toggleDarkMode()"
+          class="relative inline-flex h-7 w-14 items-center rounded-full transition-colors duration-300"
+          [ngClass]="{
+            'bg-slate-700': darkMode(),
+            'bg-slate-200': !darkMode()
+          }"
+          role="switch"
+          [attr.aria-checked]="darkMode()"
+          [attr.aria-label]="darkMode() ? 'Switch to light mode' : 'Switch to dark mode'"
+        >
+          <span
+            class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white dark:bg-slate-900 shadow-lg transform transition-all duration-300 ease-in-out"
+            [ngClass]="{
+              'translate-x-7': darkMode(),
+              'translate-x-1': !darkMode()
+            }"
+          >
+            <lucide-icon 
+              *ngIf="!darkMode()"
+              name="sun" 
+              class="h-4 w-4 text-amber-500"
+            ></lucide-icon>
+            <lucide-icon 
+              *ngIf="darkMode()"
+              name="moon" 
+              class="h-4 w-4 text-emerald-400"
+            ></lucide-icon>
+          </span>
         </button>
-        <button mat-icon-button (click)="toggleMenu()" 
-                class="text-gray-700 dark:text-gray-300">
-          <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
+        
+        <button 
+          mat-icon-button 
+          (click)="toggleMenu()" 
+          class="text-slate-700 dark:text-slate-300"
+        >
+          <lucide-icon [name]="menuOpen ? 'x' : 'menu'" class="w-6 h-6"></lucide-icon>
         </button>
       </div>
     </div>
 
     <!-- Mobile Menu -->
-    <div *ngIf="menuOpen" class="md:hidden py-4 border-t border-gray-200 dark:border-gray-700">
+    <div 
+      *ngIf="menuOpen" 
+      class="md:hidden py-4 border-t border-slate-200 dark:border-slate-700"
+    >
       <div class="flex flex-col space-y-2">
         <a routerLink="/" routerLinkActive="active-mobile" [routerLinkActiveOptions]="{exact: true}"
            (click)="toggleMenu()"
-           class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+           class="px-4 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-200">
           Home
         </a>
         <a routerLink="/services" routerLinkActive="active-mobile"
            (click)="toggleMenu()"
-           class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+           class="px-4 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-200">
           Services
         </a>
         <a routerLink="/about" routerLinkActive="active-mobile"
            (click)="toggleMenu()"
-           class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+           class="px-4 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-200">
           About
         </a>
         <a routerLink="/blog" routerLinkActive="active-mobile"
            (click)="toggleMenu()"
-           class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+           class="px-4 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-200">
           Blog
         </a>
         <a routerLink="/contact" routerLinkActive="active-mobile"
            (click)="toggleMenu()"
-           class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+           class="px-4 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-200">
           Contact
         </a>
       </div>

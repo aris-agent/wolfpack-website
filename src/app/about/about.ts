@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { MatIconModule } from '@angular/material/icon';
+import { LucideAngularModule } from 'lucide-angular';
 
 @Component({
   selector: 'app-about',
-  imports: [RouterLink, MatIconModule],
+  imports: [RouterLink, LucideAngularModule],
   templateUrl: './about.html',
   styleUrl: './about.css',
 })

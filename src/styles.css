@@ -1,8 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* Enhanced Dark Mode Transitions */
+* {
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Prevent transition on initial load */
+.no-transition * {
+  transition: none !important;
+}
 
 /* Custom animations */
 @keyframes blob {
@@ -32,17 +44,90 @@
   animation-delay: 4s;
 }
 
-/* Button component */
+/* Enhanced Button Components */
 .btn-primary {
-  @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300;
+  @apply relative overflow-hidden bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .card {
-  @apply bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300;
+  @apply bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300;
+}
+
+/* Enhanced Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-extrabold tracking-tight;
+}
+
+h1 {
+  @apply text-5xl md:text-7xl leading-tight;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  @apply text-4xl md:text-5xl leading-tight;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  @apply text-2xl md:text-3xl leading-snug;
+}
+
+h4 {
+  @apply text-xl md:text-2xl leading-snug;
+}
+
+body {
+  @apply text-base leading-relaxed;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+p {
+  @apply mb-4;
+  max-width: 65ch;
+}
+
+/* Enhanced Focus States */
+*:focus-visible {
+  @apply outline-none ring-2 ring-emerald-500 ring-offset-2 dark:ring-offset-slate-900;
+  border-radius: 0.375rem;
+}
+
+button:focus-visible,
+a:focus-visible {
+  @apply ring-2 ring-emerald-500 ring-offset-2;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Material Design dark mode overrides */
 .dark {
-  --mat-sys-primary: #60a5fa;
-  --mat-sys-on-primary: #1e293b;
+  --mat-sys-primary: #34D399;
+  --mat-sys-on-primary: #0F172A;
 }

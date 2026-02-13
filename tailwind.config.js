@@ -6,6 +6,13 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        navy: {
+          900: '#0A2540',
+          700: '#1E3A5F',
+          500: '#2E4A6F',
+        },
+      },
       animation: {
         'blob': 'blob 7s infinite',
       },

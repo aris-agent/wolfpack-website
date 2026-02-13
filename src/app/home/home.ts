@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { LucideAngularModule } from 'lucide-angular';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, MatButtonModule, MatIconModule, MatCardModule],
+  imports: [
+    RouterLink, 
+    MatButtonModule, 
+    MatCardModule, 
+    LucideAngularModule
+  ],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
