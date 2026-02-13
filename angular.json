@@ -32,6 +32,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/wolfpack-website/",
               "budgets": [
                 {
                   "type": "initial",
