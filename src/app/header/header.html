@@ -1,26 +1,81 @@
-<mat-toolbar color="primary">
-  <span>Wolfpack</span>
-  <span class="spacer"></span>
-  <nav class="desktop-nav">
-    <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-    <a mat-button routerLink="/services" routerLinkActive="active">Services</a>
-    <a mat-button routerLink="/about" routerLinkActive="active">About</a>
-    <a mat-button routerLink="/blog" routerLinkActive="active">Blog</a>
-    <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
-  </nav>
-  <button mat-icon-button (click)="toggleMenu()" class="mobile-menu-button">
-    <mat-icon>menu</mat-icon>
-  </button>
-</mat-toolbar>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a routerLink="/" class="flex items-center space-x-2 group">
+        <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform">
+          <mat-icon class="text-white">rocket_launch</mat-icon>
+        </div>
+        <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Wolfpack</span>
+      </a>
 
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav mode="over" [(opened)]="menuOpen" class="mobile-nav">
-    <mat-nav-list>
-      <a mat-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleMenu()">Home</a>
-      <a mat-list-item routerLink="/services" routerLinkActive="active" (click)="toggleMenu()">Services</a>
-      <a mat-list-item routerLink="/about" routerLinkActive="active" (click)="toggleMenu()">About</a>
-      <a mat-list-item routerLink="/blog" routerLinkActive="active" (click)="toggleMenu()">Blog</a>
-      <a mat-list-item routerLink="/contact" routerLinkActive="active" (click)="toggleMenu()">Contact</a>
-    </mat-nav-list>
-  </mat-sidenav>
-</mat-sidenav-container>
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-1">
+        <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" 
+           class="nav-link">Home</a>
+        <a mat-button routerLink="/services" routerLinkActive="active-link" 
+           class="nav-link">Services</a>
+        <a mat-button routerLink="/about" routerLinkActive="active-link" 
+           class="nav-link">About</a>
+        <a mat-button routerLink="/blog" routerLinkActive="active-link" 
+           class="nav-link">Blog</a>
+        <a mat-button routerLink="/contact" routerLinkActive="active-link" 
+           class="nav-link">Contact</a>
+        
+        <!-- Dark Mode Toggle -->
+        <button mat-icon-button (click)="toggleDarkMode()" 
+                class="ml-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                [attr.aria-label]="darkMode() ? 'Switch to light mode' : 'Switch to dark mode'">
+          <mat-icon>{{ darkMode() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center space-x-2">
+        <button mat-icon-button (click)="toggleDarkMode()" 
+                class="text-gray-700 dark:text-gray-300"
+                [attr.aria-label]="darkMode() ? 'Switch to light mode' : 'Switch to dark mode'">
+          <mat-icon>{{ darkMode() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+        </button>
+        <button mat-icon-button (click)="toggleMenu()" 
+                class="text-gray-700 dark:text-gray-300">
+          <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div *ngIf="menuOpen" class="md:hidden py-4 border-t border-gray-200 dark:border-gray-700">
+      <div class="flex flex-col space-y-2">
+        <a routerLink="/" routerLinkActive="active-mobile" [routerLinkActiveOptions]="{exact: true}"
+           (click)="toggleMenu()"
+           class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          Home
+        </a>
+        <a routerLink="/services" routerLinkActive="active-mobile"
+           (click)="toggleMenu()"
+           class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          Services
+        </a>
+        <a routerLink="/about" routerLinkActive="active-mobile"
+           (click)="toggleMenu()"
+           class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          About
+        </a>
+        <a routerLink="/blog" routerLinkActive="active-mobile"
+           (click)="toggleMenu()"
+           class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          Blog
+        </a>
+        <a routerLink="/contact" routerLinkActive="active-mobile"
+           (click)="toggleMenu()"
+           class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          Contact
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Spacer to prevent content from going under fixed nav -->
+<div class="h-16"></div>

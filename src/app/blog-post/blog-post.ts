@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-blog-post',
-  imports: [MarkdownModule],
+  imports: [MarkdownModule, RouterLink, MatIconModule],
   templateUrl: './blog-post.html',
   styleUrl: './blog-post.css',
 })

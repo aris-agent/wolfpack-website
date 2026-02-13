@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  imports: [RouterLink, MatIconModule],
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
