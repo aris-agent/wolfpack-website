@@ -1,11 +1,11 @@
-<div class="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50/30 to-teal-50/30 dark:from-gray-900 dark:via-emerald-900/20 dark:to-teal-900/20 py-20">
+<div class="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50/30 to-teal-50/30 dark:from-slate-900 dark:via-emerald-900/20 dark:to-teal-900/20 py-20">
   <div class="container">
     <!-- Header -->
     <div class="text-center mb-12">
       <h1 class="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
         Get in Touch
       </h1>
-      <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+      <p class="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
         Ready to start your project? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
       </p>
     </div>
@@ -13,12 +13,12 @@
     <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
       <!-- Contact Form -->
       <div class="card">
-        <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">Send us a Message</h2>
+        <h2 class="text-2xl font-bold mb-6 text-slate-900 dark:text-slate-100">Send us a Message</h2>
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
           <mat-form-field appearance="outline" class="w-full">
             <mat-label>Name</mat-label>
             <input matInput formControlName="name" required>
-            <lucide-icon name="user" class="text-gray-400" [size]="20"></lucide-icon>
+            <lucide-icon name="user" class="text-slate-400" [size]="20"></lucide-icon>
             <mat-error *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
               Name is required
             </mat-error>
@@ -27,7 +27,7 @@
           <mat-form-field appearance="outline" class="w-full">
             <mat-label>Email</mat-label>
             <input matInput type="email" formControlName="email" required>
-            <lucide-icon name="mail" class="text-gray-400" [size]="20"></lucide-icon>
+            <lucide-icon name="mail" class="text-slate-400" [size]="20"></lucide-icon>
             <mat-error *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
               Please enter a valid email
             </mat-error>
@@ -36,7 +36,7 @@
           <mat-form-field appearance="outline" class="w-full">
             <mat-label>Message</mat-label>
             <textarea matInput formControlName="message" rows="5" required></textarea>
-            <lucide-icon name="message-square" class="text-gray-400" [size]="20"></lucide-icon>
+            <lucide-icon name="message-square" class="text-slate-400" [size]="20"></lucide-icon>
             <mat-error *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
               Message is required
             </mat-error>
@@ -54,15 +54,15 @@
       <!-- Contact Info -->
       <div class="space-y-6">
         <div class="card">
-          <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">Why Work With Us?</h2>
+          <h2 class="text-2xl font-bold mb-6 text-slate-900 dark:text-slate-100">Why Work With Us?</h2>
           <div class="space-y-4">
             <div class="flex items-start">
               <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
                 <lucide-icon name="clock" class="text-white" [size]="24"></lucide-icon>
               </div>
               <div>
-                <h3 class="font-bold text-gray-900 dark:text-gray-100 mb-1">Fast Response</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">We typically respond within 24 hours</p>
+                <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Fast Response</h3>
+                <p class="text-slate-600 dark:text-slate-300 text-sm">We typically respond within 24 hours</p>
               </div>
             </div>
 
@@ -71,8 +71,8 @@
                 <lucide-icon name="award" class="text-white" [size]="24"></lucide-icon>
               </div>
               <div>
-                <h3 class="font-bold text-gray-900 dark:text-gray-100 mb-1">Expert Consultation</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">Free initial consultation to discuss your needs</p>
+                <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Expert Consultation</h3>
+                <p class="text-slate-600 dark:text-slate-300 text-sm">Free initial consultation to discuss your needs</p>
               </div>
             </div>
 
@@ -81,8 +81,8 @@
                 <lucide-icon name="handshake" class="text-white" [size]="24"></lucide-icon>
               </div>
               <div>
-                <h3 class="font-bold text-gray-900 dark:text-gray-100 mb-1">Flexible Engagement</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm">Project-based or ongoing partnerships</p>
+                <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Flexible Engagement</h3>
+                <p class="text-slate-600 dark:text-slate-300 text-sm">Project-based or ongoing partnerships</p>
               </div>
             </div>
           </div>
@@ -100,14 +100,14 @@
         </div>
 
         <div class="card">
-          <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">What Happens Next?</h3>
+          <h3 class="text-xl font-bold mb-4 text-slate-900 dark:text-slate-100">What Happens Next?</h3>
           <div class="space-y-3">
             <div class="flex items-start">
               <div class="w-8 h-8 bg-emerald-100 dark:bg-emerald-900 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center flex-shrink-0 mr-3 font-bold">
                 1
               </div>
               <div>
-                <p class="text-gray-700 dark:text-gray-300 text-sm">We review your message and requirements</p>
+                <p class="text-slate-700 dark:text-slate-300 text-sm">We review your message and requirements</p>
               </div>
             </div>
             <div class="flex items-start">
@@ -115,7 +115,7 @@
                 2
               </div>
               <div>
-                <p class="text-gray-700 dark:text-gray-300 text-sm">Schedule a consultation call</p>
+                <p class="text-slate-700 dark:text-slate-300 text-sm">Schedule a consultation call</p>
               </div>
             </div>
             <div class="flex items-start">
@@ -123,7 +123,7 @@
                 3
               </div>
               <div>
-                <p class="text-gray-700 dark:text-gray-300 text-sm">Receive a custom proposal and timeline</p>
+                <p class="text-slate-700 dark:text-slate-300 text-sm">Receive a custom proposal and timeline</p>
               </div>
             </div>
             <div class="flex items-start">
@@ -131,7 +131,7 @@
                 4
               </div>
               <div>
-                <p class="text-gray-700 dark:text-gray-300 text-sm">Kick off your project!</p>
+                <p class="text-slate-700 dark:text-slate-300 text-sm">Kick off your project!</p>
               </div>
             </div>
           </div>
