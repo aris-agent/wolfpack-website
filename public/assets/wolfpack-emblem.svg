@@ -1,52 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor" class="wolfpack-emblem">
-  <!-- Shield shape background cut -->
-  <defs>
-    <clipPath id="shieldClip">
-      <path d="M50 5 L90 25 L90 60 Q90 85 50 95 Q10 85 10 60 L10 25 Z"/>
-    </clipPath>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" fill="none">
+  <!-- Dark charcoal background shape - horizontal orientation -->
+  <rect x="0" y="0" width="200" height="80" fill="#36454F"/>
   
-  <!-- Main shield shape - black fill -->
-  <path d="M50 5 L90 25 L90 60 Q90 85 50 95 Q10 85 10 60 L10 25 Z" fill="currentColor"/>
+  <!-- Left wolf profile (dark on dark, using cutout effect) -->
+  <path d="M20 55 L35 40 L35 25 L30 15 L25 25 L20 30 L10 35 L5 45 L10 55 Z" fill="#2D3748"/>
   
-  <!-- Central wolf - facing forward -->
-  <g fill="white">
-    <!-- Central wolf head -->
-    <path d="M50 18 L58 28 L62 42 L58 52 L50 58 L42 52 L38 42 L42 28 Z"/>
-    <!-- Central wolf ears -->
-    <path d="M42 22 L46 15 L50 22 Z"/>
-    <path d="M50 22 L54 15 L58 22 Z"/>
-    <!-- Central wolf eyes -->
-    <ellipse cx="45" cy="35" rx="3" ry="4"/>
-    <ellipse cx="55" cy="35" rx="3" ry="4"/>
-    <!-- Central wolf nose -->
-    <path d="M47 46 L53 46 L50 51 Z"/>
-  </g>
+  <!-- Left wolf ear -->
+  <path d="M30 20 L35 8 L28 20 Z" fill="#2D3748"/>
   
-  <!-- Left wolf - profile looking left -->
-  <g fill="white" transform="translate(-8, 2)">
-    <!-- Left wolf head -->
-    <path d="M30 32 L42 28 L45 40 L40 50 L30 48 L22 42 L24 36 Z"/>
-    <!-- Left wolf ear -->
-    <path d="M38 26 L42 18 L38 28 Z"/>
-    <!-- Left wolf eye -->
-    <ellipse cx="35" cy="35" rx="2" ry="3"/>
-    <!-- Left wolf nose -->
-    <path d="M24 42 L28 42 L26 46 Z"/>
-  </g>
+  <!-- Left wolf eye (diamond) -->
+  <path d="M22 32 L26 28 L30 32 L26 36 Z" fill="#4A5568"/>
   
-  <!-- Right wolf - profile looking right -->
-  <g fill="white" transform="translate(8, 2)">
-    <!-- Right wolf head -->
-    <path d="M70 32 L58 28 L55 40 L60 50 L70 48 L78 42 L76 36 Z"/>
-    <!-- Right wolf ear -->
-    <path d="M62 26 L58 18 L62 28 Z"/>
-    <!-- Right wolf eye -->
-    <ellipse cx="65" cy="35" rx="2" ry="3"/>
-    <!-- Right wolf nose -->
-    <path d="M76 42 L72 42 L74 46 Z"/>
-  </g>
+  <!-- Left wolf nose (hexagonal) -->
+  <path d="M10 48 L16 45 L16 51 L10 54 L4 51 L4 45 Z" fill="#1A202C"/>
   
-  <!-- Negative space cuts for depth -->
-  <path d="M50 60 L45 70 L50 68 L55 70 Z" fill="white" opacity="0.5"/>
+  <!-- Right wolf profile -->
+  <path d="M180 55 L165 40 L165 25 L170 15 L175 25 L180 30 L190 35 L195 45 L190 55 Z" fill="#2D3748"/>
+  
+  <!-- Right wolf ear -->
+  <path d="M170 20 L165 8 L172 20 Z" fill="#2D3748"/>
+  
+  <!-- Right wolf eye (diamond) -->
+  <path d="M178 32 L174 28 L170 32 L174 36 Z" fill="#4A5568"/>
+  
+  <!-- Right wolf nose (hexagonal) -->
+  <path d="M190 48 L184 45 L184 51 L190 54 L196 51 L196 45 Z" fill="#1A202C"/>
+  
+  <!-- Negative space center wolf (white = transparent through to background) -->
+  <!-- Center wolf head - geometric hexagon base -->
+  <path d="M100 20 L115 30 L115 50 L100 60 L85 50 L85 30 Z" fill="#4A5568"/>
+  
+  <!-- Center wolf ears - sharp triangles -->
+  <path d="M85 25 L90 10 L95 28 Z" fill="#4A5568"/>
+  <path d="M105 28 L110 10 L115 25 Z" fill="#4A5568"/>
+  
+  <!-- Center wolf eyes (diamond) -->
+  <path d="M90 38 L95 33 L100 38 L95 43 Z" fill="#E2E8F0"/>
+  <path d="M100 38 L105 33 L110 38 L105 43 Z" fill="#E2E8F0"/>
+  
+  <!-- Center wolf nose (hexagonal) -->
+  <path d="M97 50 L100 47 L103 50 L103 54 L100 57 L97 54 Z" fill="#E2E8F0"/>
+  
+  <!-- Geometric details - angular lines -->
+  <line x1="100" y1="20" x2="100" y2="60" stroke="#2D3748" stroke-width="1"/>
+  <line x1="85" y1="30" x2="115" y2="30" stroke="#2D3748" stroke-width="1"/>
 </svg>
