@@ -1,47 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" fill="none">
-  <!-- Dark charcoal background shape - horizontal orientation -->
-  <rect x="0" y="0" width="200" height="80" fill="#36454F"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Background circle with gradient -->
+  <defs>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+    <linearGradient id="tealGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </linearGradient>
+  </defs>
   
-  <!-- Left wolf profile (dark on dark, using cutout effect) -->
-  <path d="M20 55 L35 40 L35 25 L30 15 L25 25 L20 30 L10 35 L5 45 L10 55 Z" fill="#2D3748"/>
+  <!-- Outer ring -->
+  <circle cx="50" cy="50" r="48" fill="url(#emeraldGrad)"/>
   
-  <!-- Left wolf ear -->
-  <path d="M30 20 L35 8 L28 20 Z" fill="#2D3748"/>
+  <!-- Inner dark circle -->
+  <circle cx="50" cy="50" r="42" fill="#064E3B"/>
   
-  <!-- Left wolf eye (diamond) -->
-  <path d="M22 32 L26 28 L30 32 L26 36 Z" fill="#4A5568"/>
+  <!-- Stylized wolf eye - main shape -->
+  <path d="M50 18 L75 35 L75 65 L50 82 L25 65 L25 35 Z" fill="url(#tealGlow)" opacity="0.9"/>
   
-  <!-- Left wolf nose (hexagonal) -->
-  <path d="M10 48 L16 45 L16 51 L10 54 L4 51 L4 45 Z" fill="#1A202C"/>
+  <!-- Wolf eye iris - emerald -->
+  <ellipse cx="50" cy="50" rx="18" ry="22" fill="#10B981"/>
   
-  <!-- Right wolf profile -->
-  <path d="M180 55 L165 40 L165 25 L170 15 L175 25 L180 30 L190 35 L195 45 L190 55 Z" fill="#2D3748"/>
+  <!-- Pupil - vertical slit like a wolf -->
+  <ellipse cx="50" cy="50" rx="5" ry="16" fill="#022C22"/>
   
-  <!-- Right wolf ear -->
-  <path d="M170 20 L165 8 L172 20 Z" fill="#2D3748"/>
+  <!-- Eye highlight -->
+  <ellipse cx="44" cy="42" rx="4" ry="6" fill="#6EE7B7" opacity="0.8"/>
   
-  <!-- Right wolf eye (diamond) -->
-  <path d="M178 32 L174 28 L170 32 L174 36 Z" fill="#4A5568"/>
-  
-  <!-- Right wolf nose (hexagonal) -->
-  <path d="M190 48 L184 45 L184 51 L190 54 L196 51 L196 45 Z" fill="#1A202C"/>
-  
-  <!-- Negative space center wolf (white = transparent through to background) -->
-  <!-- Center wolf head - geometric hexagon base -->
-  <path d="M100 20 L115 30 L115 50 L100 60 L85 50 L85 30 Z" fill="#4A5568"/>
-  
-  <!-- Center wolf ears - sharp triangles -->
-  <path d="M85 25 L90 10 L95 28 Z" fill="#4A5568"/>
-  <path d="M105 28 L110 10 L115 25 Z" fill="#4A5568"/>
-  
-  <!-- Center wolf eyes (diamond) -->
-  <path d="M90 38 L95 33 L100 38 L95 43 Z" fill="#E2E8F0"/>
-  <path d="M100 38 L105 33 L110 38 L105 43 Z" fill="#E2E8F0"/>
-  
-  <!-- Center wolf nose (hexagonal) -->
-  <path d="M97 50 L100 47 L103 50 L103 54 L100 57 L97 54 Z" fill="#E2E8F0"/>
-  
-  <!-- Geometric details - angular lines -->
-  <line x1="100" y1="20" x2="100" y2="60" stroke="#2D3748" stroke-width="1"/>
-  <line x1="85" y1="30" x2="115" y2="30" stroke="#2D3748" stroke-width="1"/>
+  <!-- Subtle accent lines -->
+  <path d="M50 18 L50 10" stroke="#14B8A6" stroke-width="2" stroke-linecap="round"/>
+  <path d="M75 35 L82 32" stroke="#14B8A6" stroke-width="2" stroke-linecap="round"/>
+  <path d="M25 35 L18 32" stroke="#14B8A6" stroke-width="2" stroke-linecap="round"/>
 </svg>
