@@ -4,16 +4,31 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Enhanced Dark Mode Transitions */
-* {
-  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-              color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 /* Prevent transition on initial load */
+.no-transition,
 .no-transition * {
   transition: none !important;
+}
+
+/* Enhanced Dark Mode Transitions - Only for specific properties */
+html {
+  transition: background-color 0.2s ease-in-out;
+}
+
+body {
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  @apply bg-white dark:bg-slate-900;
+}
+
+/* Smooth transitions for common elements */
+.card,
+button,
+a,
+nav {
+  transition: background-color 0.2s ease-in-out,
+              border-color 0.2s ease-in-out,
+              color 0.2s ease-in-out,
+              box-shadow 0.2s ease-in-out;
 }
 
 /* Custom animations */
@@ -112,7 +127,7 @@ p {
 
 button:focus-visible,
 a:focus-visible {
-  @apply ring-2 ring-emerald-500 ring-offset-2;
+  @apply ring-2 ring-emerald-500 ring-offset-2 dark:ring-offset-slate-900;
 }
 
 /* Reduced Motion Support */

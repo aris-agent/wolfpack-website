@@ -1,5 +1,5 @@
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-md">
-  <div class="container mx-auto px-4">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-sm border-b border-slate-200/50 dark:border-slate-700/50">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
       <a routerLink="/" class="flex items-center gap-2 group">
@@ -10,7 +10,7 @@
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center gap-1">
+      <div class="hidden md:flex items-center gap-2">
         <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" 
            class="nav-link">Home</a>
         <a mat-button routerLink="/services" routerLinkActive="active-link" 
@@ -22,64 +22,70 @@
         <a mat-button routerLink="/contact" routerLinkActive="active-link" 
            class="nav-link">Contact</a>
         
-        <!-- Enhanced Dark Mode Toggle -->
-        <div class="flex items-center gap-2 ml-4">
-          <span class="text-xs text-slate-600 dark:text-slate-400 hidden lg:inline">
-            {{ darkMode() ? 'Dark' : 'Light' }}
-          </span>
+        <!-- Enhanced Dark Mode Toggle with better positioning -->
+        <div class="flex items-center ml-6 pl-6 border-l border-slate-200 dark:border-slate-700">
           <button
             (click)="toggleDarkMode()"
-            class="relative inline-flex h-7 w-14 items-center rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+            class="group relative inline-flex h-9 w-16 items-center rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 hover:scale-105"
             [ngClass]="{
-              'bg-slate-700': darkMode(),
-              'bg-slate-200': !darkMode()
+              'bg-gradient-to-r from-slate-700 to-slate-800': darkMode(),
+              'bg-gradient-to-r from-slate-200 to-slate-300': !darkMode()
             }"
             role="switch"
             [attr.aria-checked]="darkMode()"
             [attr.aria-label]="darkMode() ? 'Switch to light mode' : 'Switch to dark mode'"
           >
-            <!-- Toggle Circle with Icon -->
+            <!-- Toggle Circle with Icon and glow effect -->
             <span
-              class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white dark:bg-slate-900 shadow-lg transform transition-all duration-300 ease-in-out"
+              class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white dark:bg-slate-900 shadow-lg transform transition-all duration-300 ease-out"
               [ngClass]="{
-                'translate-x-7': darkMode(),
-                'translate-x-1': !darkMode()
+                'translate-x-8 shadow-emerald-500/50': darkMode(),
+                'translate-x-1 shadow-amber-500/50': !darkMode()
               }"
             >
               <!-- Sun Icon (Light Mode) -->
               <lucide-icon 
                 *ngIf="!darkMode()"
                 name="sun" 
-                class="h-4 w-4 text-amber-500 transition-opacity duration-200"
+                class="h-4 w-4 text-amber-500 animate-in spin-in-0 duration-300"
               ></lucide-icon>
               
               <!-- Moon Icon (Dark Mode) -->
               <lucide-icon 
                 *ngIf="darkMode()"
                 name="moon" 
-                class="h-4 w-4 text-emerald-400 transition-opacity duration-200"
+                class="h-4 w-4 text-emerald-400 animate-in spin-in-0 duration-300"
               ></lucide-icon>
+            </span>
+            
+            <!-- Background stars for dark mode -->
+            <span 
+              *ngIf="darkMode()"
+              class="absolute inset-0 flex items-center justify-start pl-2 pointer-events-none"
+            >
+              <span class="w-1 h-1 bg-emerald-300 rounded-full opacity-60"></span>
+              <span class="w-1 h-1 bg-emerald-400 rounded-full opacity-40 ml-1"></span>
             </span>
           </button>
         </div>
       </div>
 
       <!-- Mobile Menu Button -->
-      <div class="md:hidden flex items-center gap-2">
+      <div class="md:hidden flex items-center gap-3">
         <!-- Mobile Dark Mode Toggle -->
         <button
           (click)="toggleDarkMode()"
-          class="relative inline-flex h-7 w-14 items-center rounded-full transition-colors duration-300"
+          class="group relative inline-flex h-8 w-14 items-center rounded-full transition-all duration-300 hover:scale-105"
           [ngClass]="{
-            'bg-slate-700': darkMode(),
-            'bg-slate-200': !darkMode()
+            'bg-gradient-to-r from-slate-700 to-slate-800': darkMode(),
+            'bg-gradient-to-r from-slate-200 to-slate-300': !darkMode()
           }"
           role="switch"
           [attr.aria-checked]="darkMode()"
           [attr.aria-label]="darkMode() ? 'Switch to light mode' : 'Switch to dark mode'"
         >
           <span
-            class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white dark:bg-slate-900 shadow-lg transform transition-all duration-300 ease-in-out"
+            class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white dark:bg-slate-900 shadow-lg transform transition-all duration-300 ease-out"
             [ngClass]="{
               'translate-x-7': darkMode(),
               'translate-x-1': !darkMode()
@@ -88,12 +94,12 @@
             <lucide-icon 
               *ngIf="!darkMode()"
               name="sun" 
-              class="h-4 w-4 text-amber-500"
+              class="h-3.5 w-3.5 text-amber-500"
             ></lucide-icon>
             <lucide-icon 
               *ngIf="darkMode()"
               name="moon" 
-              class="h-4 w-4 text-emerald-400"
+              class="h-3.5 w-3.5 text-emerald-400"
             ></lucide-icon>
           </span>
         </button>
@@ -101,7 +107,7 @@
         <button 
           mat-icon-button 
           (click)="toggleMenu()" 
-          class="text-slate-700 dark:text-slate-300"
+          class="text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
         >
           <lucide-icon [name]="menuOpen ? 'x' : 'menu'" class="w-6 h-6"></lucide-icon>
         </button>
