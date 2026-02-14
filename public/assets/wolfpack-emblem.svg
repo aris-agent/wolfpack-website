@@ -1,21 +1,89 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
   <defs>
+    <!-- Primary gradient - emerald to teal -->
     <linearGradient id="wolfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#10b981"/>
       <stop offset="100%" style="stop-color:#0d9488"/>
     </linearGradient>
+    <!-- Subtle highlight gradient -->
+    <linearGradient id="wolfHighlight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#34d399"/>
+      <stop offset="100%" style="stop-color:#10b981"/>
+    </linearGradient>
+    <!-- Shadow filter -->
+    <filter id="wolfShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
   </defs>
-  <!-- Stylized wolf head -->
-  <path fill="url(#wolfGrad)" d="M100 20 L140 50 L160 90 L160 130 L140 170 L100 190 L60 170 L40 130 L40 90 L60 50 Z"/>
-  <!-- Wolf face details -->
-  <path fill="#fff" d="M100 40 L120 60 L100 80 L80 60 Z"/>
-  <!-- Eyes -->
-  <ellipse fill="#fff" cx="75" cy="85" rx="12" ry="15"/>
-  <ellipse fill="#fff" cx="125" cy="85" rx="12" ry="15"/>
-  <ellipse fill="#064e3b" cx="75" cy="85" rx="6" ry="10"/>
-  <ellipse fill="#064e3b" cx="125" cy="85" rx="6" ry="10"/>
-  <!-- Nose -->
-  <path fill="#064e3b" d="M90 130 L100 120 L110 130 L100 145 Z"/>
-  <!-- Ear accents -->
-  <path fill="#064e3b" opacity="0.3" d="M100 20 L115 50 L100 45 L85 50 Z"/>
+  
+  <!-- Background circle (optional, subtle) -->
+  <circle cx="100" cy="100" r="95" fill="url(#wolfGrad)" opacity="0.1"/>
+  
+  <!-- Main wolf head silhouette - modern geometric style -->
+  <g filter="url(#wolfShadow)">
+    <!-- Wolf head base -->
+    <path fill="url(#wolfGrad)" d="M100 25 
+      C130 25 155 45 165 75 
+      L175 95 
+      C180 110 175 125 165 135 
+      L155 155 
+      C145 175 125 190 100 190 
+      C75 190 55 175 45 155 
+      L35 135 
+      C25 125 20 110 25 95 
+      L35 75 
+      C45 45 70 25 100 25 Z"/>
+    
+    <!-- Inner face highlight -->
+    <path fill="url(#wolfHighlight)" d="M100 35 
+      C120 35 140 50 148 70 
+      L155 85 
+      C158 95 155 105 148 112 
+      L142 128 
+      C135 145 120 155 100 155 
+      C80 155 65 145 58 128 
+      L52 112 
+      C45 105 42 95 45 85 
+      L52 70 
+      C60 50 80 35 100 35 Z" opacity="0.4"/>
+    
+    <!-- Wolf snout/muzzle -->
+    <path fill="#f0fdf4" d="M100 130 
+      L85 105 
+      C82 100 85 95 90 95 
+      L100 95 
+      L110 95 
+      C115 95 118 100 115 105 
+      Z" opacity="0.9"/>
+    
+    <!-- Nose -->
+    <path fill="#064e3b" d="M100 115 
+      L92 125 
+      L100 135 
+      L108 125 
+      Z"/>
+    
+    <!-- Eyes - left -->
+    <ellipse fill="#f0fdf4" cx="70" cy="80" rx="12" ry="14"/>
+    <ellipse fill="#064e3b" cx="70" cy="82" rx="6" ry="9"/>
+    <circle cx="72" cy="78" r="2" fill="#fff" opacity="0.8"/>
+    
+    <!-- Eyes - right -->
+    <ellipse fill="#f0fdf4" cx="130" cy="80" rx="12" ry="14"/>
+    <ellipse fill="#064e3b" cx="130" cy="82" rx="6" ry="9"/>
+    <circle cx="132" cy="78" r="2" fill="#fff" opacity="0.8"/>
+    
+    <!-- Ear accents - left -->
+    <path fill="#064e3b" opacity="0.3" d="M50 55 L60 30 L75 50 L65 55 Z"/>
+    
+    <!-- Ear accents - right -->
+    <path fill="#064e3b" opacity="0.3" d="M150 55 L140 30 L125 50 L135 55 Z"/>
+  </g>
+  
+  <!-- Subtle pack element - three small wolves howling (abstract) -->
+  <g opacity="0.15">
+    <path fill="#fff" d="M40 170 L45 160 L50 170 L45 175 Z"/>
+    <path fill="#fff" d="M100 175 L105 165 L110 175 L105 180 Z"/>
+    <path fill="#fff" d="M160 170 L155 160 L150 170 L155 175 Z"/>
+  </g>
 </svg>
