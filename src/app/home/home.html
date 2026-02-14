@@ -74,44 +74,35 @@
         </div>
       </div>
 
-      <!-- Hero Visual - Team Work Icon -->
+      <!-- Hero Visual - Teamwork Image with Wolfpack Branding -->
       <div class="flex justify-center lg:justify-end">
         <div class="relative group">
-          <!-- Main Card -->
-          <div class="relative w-80 h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-3xl flex items-center justify-center shadow-2xl transform group-hover:scale-105 transition-transform duration-500 overflow-hidden">
-            <!-- Static Team Work Icon -->
-            <svg viewBox="0 0 120 100" class="w-48 h-40">
-              <!-- Center leader -->
-              <circle cx="60" cy="25" r="14" fill="#ffffff"/>
-              <path d="M40 90 Q40 60 60 60 Q80 60 80 90" fill="#ffffff"/>
-              <!-- Left person -->
-              <circle cx="28" cy="35" r="11" fill="#f0fdf4"/>
-              <path d="M12 90 Q12 68 28 68 Q44 68 44 90" fill="#f0fdf4"/>
-              <!-- Right person -->
-              <circle cx="92" cy="35" r="11" fill="#f0fdf4"/>
-              <path d="M76 90 Q76 68 92 68 Q108 68 108 90" fill="#f0fdf4"/>
-              <!-- Connection lines -->
-              <path d="M42 40 L52 30" stroke="#0d9488" stroke-width="2.5" stroke-linecap="round"/>
-              <path d="M78 40 L68 30" stroke="#0d9488" stroke-width="2.5" stroke-linecap="round"/>
-              <!-- Gear/cog behind -->
-              <circle cx="60" cy="55" r="25" fill="none" stroke="#0d9488" stroke-width="2" opacity="0.3"/>
-              <circle cx="60" cy="55" r="18" fill="none" stroke="#0d9488" stroke-width="1.5" opacity="0.2"/>
-            </svg>
+          <!-- Main Card with Teamwork Image -->
+          <div class="relative w-80 h-80 lg:w-96 lg:h-96 rounded-3xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500 overflow-hidden border-4 border-emerald-500/30 dark:border-emerald-400/30">
+            <!-- Teamwork Image -->
+            <img src="/home/mrshashank/.openclaw/media/inbound/file_0---97d3cd57-980e-46b0-8c48-eab00efcfd0d.jpg" 
+                 alt="Team Wolfpack - Brainstorming Session" 
+                 class="w-full h-full object-cover">
             
-            <!-- Floating Elements - Static -->
-            <div class="absolute -top-4 -right-4 w-20 h-20 bg-amber-400 rounded-2xl flex items-center justify-center shadow-lg">
-              <svg viewBox="0 0 24 24" class="w-10 h-10" fill="none" stroke="white" stroke-width="2">
-                <path d="M12 2 L15 8 L22 9 L17 14 L18 21 L12 18 L6 21 L7 14 L2 9 L9 8 Z"/>
+            <!-- Wolfpack Branding Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent"></div>
+            
+            <!-- Wolfpack Badge -->
+            <div class="absolute top-4 right-4 bg-emerald-600 text-white px-4 py-2 rounded-full font-bold text-sm shadow-lg flex items-center gap-2">
+              <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor">
+                <path d="M12 2L4 7v10l8 5 8-5V7l-8-5zm0 2.5L17 8v8l-5 3-5-3V8l5-3.5z"/>
+                <circle cx="12" cy="12" r="3"/>
               </svg>
+              <span>TEAM WOLFPACK</span>
             </div>
             
-            <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-navy-900 dark:bg-slate-100 rounded-2xl flex items-center justify-center shadow-lg">
-              <svg viewBox="0 0 24 24" class="w-10 h-10" fill="none" stroke="#10b981" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            <!-- Innovation Label -->
+            <div class="absolute bottom-4 left-4 bg-amber-500 text-white px-4 py-2 rounded-full font-semibold text-sm shadow-lg flex items-center gap-2">
+              <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor">
+                <path d="M12 2C9 2 6 5 6 9c0 2.5 1 4.5 2 6l1 2 1-2c1-1.5 2-3.5 2-6 0-4-3-7-6-7zm0 2c2 0 4 2.5 4 5 0 1.5-.5 3-1 4l-1 1.5-.5-1.5C13 12 12.5 10.5 12 9c0-2.5 2-5 4-5z"/>
+                <circle cx="12" cy="9" r="2"/>
               </svg>
+              <span>Innovation</span>
             </div>
           </div>
           
