@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <path d="M12 12L52 12L52 52L12 52L12 12Z" fill="none" stroke="currentColor" stroke-width="3"/>
+  <line x1="12" y1="22" x2="52" y2="22" stroke="currentColor" stroke-width="3"/>
+  <line x1="22" y1="12" x2="22" y2="52" stroke="currentColor" stroke-width="3"/>
+  <line x1="42" y1="12" x2="42" y2="52" stroke="currentColor" stroke-width="3"/>
+  <line x1="12" y1="32" x2="52" y2="32" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+  <line x1="12" y1="42" x2="52" y2="42" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+  <line x1="32" y1="22" x2="32" y2="52" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+</svg>

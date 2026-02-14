@@ -42,7 +42,55 @@ module.exports = {
           },
         },
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: 'none',
+            color: '#1e293b',
+            a: {
+              color: '#059669',
+              '&:hover': {
+                color: '#047857',
+              },
+            },
+          },
+        },
+        invert: {
+          css: {
+            color: '#cbd5e1',
+            a: {
+              color: '#34d399',
+              '&:hover': {
+                color: '#6ee7b7',
+              },
+            },
+            h1: {
+              color: '#f1f5f9',
+            },
+            h2: {
+              color: '#f1f5f9',
+            },
+            h3: {
+              color: '#f1f5f9',
+            },
+            h4: {
+              color: '#f1f5f9',
+            },
+            strong: {
+              color: '#e2e8f0',
+            },
+            code: {
+              color: '#34d399',
+            },
+            blockquote: {
+              color: '#cbd5e1',
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

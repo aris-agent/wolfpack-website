@@ -1,0 +1,166 @@
+/* Blog Post Dark Mode Fixes */
+
+/* Ensure proper text contrast in dark mode */
+article.prose.dark\:prose-invert {
+  @apply text-slate-200;
+}
+
+/* Dark mode heading colors */
+.dark article.prose h1,
+.dark article.prose h2,
+.dark article.prose h3,
+.dark article.prose h4,
+.dark article.prose h5,
+.dark article.prose h6 {
+  @apply text-slate-100;
+}
+
+/* Dark mode paragraph and list text */
+.dark article.prose p,
+.dark article.prose li,
+.dark article.prose td,
+.dark article.prose th {
+  @apply text-slate-300;
+}
+
+/* Dark mode strong/bold text */
+.dark article.prose strong {
+  @apply text-slate-200 font-semibold;
+}
+
+/* Dark mode links */
+.dark article.prose a {
+  @apply text-emerald-400 hover:text-emerald-300;
+}
+
+/* Dark mode code blocks */
+.dark article.prose code {
+  @apply text-emerald-400 bg-slate-800;
+}
+
+.dark article.prose pre {
+  @apply bg-slate-800 border border-slate-700;
+}
+
+.dark article.prose pre code {
+  @apply text-slate-200;
+}
+
+/* Dark mode blockquotes */
+.dark article.prose blockquote {
+  @apply text-slate-300 border-l-emerald-500;
+}
+
+/* Dark mode hr */
+.dark article.prose hr {
+  @apply border-slate-700;
+}
+
+/* Dark mode table */
+.dark article.prose table {
+  @apply text-slate-300;
+}
+
+.dark article.prose thead {
+  @apply border-slate-700;
+}
+
+.dark article.prose thead th {
+  @apply text-slate-200;
+}
+
+.dark article.prose tbody tr {
+  @apply border-slate-700;
+}
+
+/* Improve typography and spacing */
+article.prose {
+  @apply text-slate-800;
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+article.prose h1 {
+  @apply text-slate-900 mb-6 mt-8;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+article.prose h2 {
+  @apply text-slate-900 mb-4 mt-12;
+  font-size: 2rem;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+article.prose h3 {
+  @apply text-slate-900 mb-3 mt-8;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+article.prose h4 {
+  @apply text-slate-900 mb-2 mt-6;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+article.prose p {
+  @apply mb-5;
+}
+
+article.prose ul,
+article.prose ol {
+  @apply mb-5 space-y-2;
+}
+
+article.prose li {
+  @apply text-slate-700;
+}
+
+article.prose strong {
+  @apply text-slate-900 font-semibold;
+}
+
+/* Images in blog posts */
+article.prose img {
+  @apply rounded-lg shadow-lg my-8 w-full;
+}
+
+/* Links */
+article.prose a {
+  @apply text-emerald-600 hover:text-emerald-700 font-medium underline decoration-emerald-300 underline-offset-2 transition-colors;
+}
+
+/* Code styling */
+article.prose code {
+  @apply text-emerald-600 bg-slate-100 px-1.5 py-0.5 rounded font-mono text-sm;
+}
+
+article.prose pre {
+  @apply bg-slate-100 border border-slate-200 rounded-lg p-4 overflow-x-auto my-6;
+}
+
+article.prose pre code {
+  @apply bg-transparent text-slate-800 px-0 py-0;
+}
+
+/* Blockquotes */
+article.prose blockquote {
+  @apply border-l-4 border-emerald-500 pl-6 py-1 italic text-slate-600 my-6;
+}
+
+/* Better spacing for first element */
+article.prose > :first-child {
+  @apply mt-0;
+}
+
+/* Better spacing for last element */
+article.prose > :last-child {
+  @apply mb-0;
+}
