@@ -3,30 +3,29 @@
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
       <a routerLink="/" class="flex items-center gap-2 group">
-        <div class="w-10 h-10 bg-gradient-to-br from-emerald-600 to-teal-600 dark:from-emerald-500 dark:to-teal-500 rounded-xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-md">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" class="w-7 h-7">
-            <!-- Premium Wolf Head - Sharp & Distinctive -->
+        <div class="w-10 h-10 bg-gradient-to-br from-emerald-600 to-teal-600 dark:from-emerald-500 dark:to-teal-500 rounded-xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-md overflow-hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" class="w-7 h-7 relative">
+            <!-- Enhanced Wolf Pack Logo - Multiple wolves showing team -->
             <defs>
-              <linearGradient id="wolfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <linearGradient id="wolfGradNew" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stop-color="#ffffff"/>
                 <stop offset="100%" stop-color="#f0fdf4"/>
               </linearGradient>
             </defs>
-            <!-- Main wolf head outline -->
-            <path d="M32 8 L44 20 L46 32 L42 44 L32 52 L22 44 L18 32 L20 20 Z" fill="url(#wolfGrad)" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/>
-            <!-- Left ear -->
-            <path d="M20 20 L16 8 L26 16 Z" fill="url(#wolfGrad)" stroke="#ffffff" stroke-width="1" stroke-linejoin="round"/>
-            <!-- Right ear -->
-            <path d="M44 20 L48 8 L38 16 Z" fill="url(#wolfGrad)" stroke="#ffffff" stroke-width="1" stroke-linejoin="round"/>
-            <!-- Eyes -->
-            <ellipse cx="26" cy="28" rx="4" ry="5" fill="#0d9488"/>
-            <ellipse cx="38" cy="28" rx="4" ry="5" fill="#0d9488"/>
-            <circle cx="27" cy="27" r="2" fill="#ffffff"/>
-            <circle cx="39" cy="27" r="2" fill="#ffffff"/>
-            <!-- Nose -->
-            <path d="M29 38 L32 36 L35 38 L32 42 Z" fill="#1e293b"/>
-            <!-- Mouth line -->
-            <path d="M32 42 L32 48 M26 46 Q32 50 38 46" stroke="#1e293b" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <!-- Leader wolf (larger, back) -->
+            <path d="M32 10 L38 22 L48 18 L44 32 L56 28 L48 46 L52 56 L36 58 L32 50 L28 58 L12 56 L16 46 L8 28 L20 32 L16 18 L26 22 Z" fill="url(#wolfGradNew)" stroke="#ffffff" stroke-width="1" stroke-linejoin="round" class="animate-pulse"/>
+            <!-- Front wolf (smaller) -->
+            <path d="M28 40 L32 48 L40 44 L36 54 L46 50 L40 62 L44 70 L32 72 L28 66 L24 72 L12 70 L16 62 L10 54 L22 50 L18 44 L26 48 Z" fill="url(#wolfGradNew)" stroke="#ffffff" stroke-width="0.5" stroke-linejoin="round" class="animate-pulse" style="animation-delay: 0.3s;"/>
+            <!-- Eyes - Leader -->
+            <ellipse cx="26" cy="34" rx="2.5" ry="3" fill="#0d9488"/>
+            <ellipse cx="38" cy="34" rx="2.5" ry="3" fill="#0d9488"/>
+            <circle cx="27" cy="33" r="1" fill="#ffffff"/>
+            <circle cx="39" cy="33" r="1" fill="#ffffff"/>
+            <!-- Eyes - Front wolf -->
+            <ellipse cx="24" cy="58" rx="1.5" ry="2" fill="#14b8a6"/>
+            <ellipse cx="36" cy="58" rx="1.5" ry="2" fill="#14b8a6"/>
+            <circle cx="25" cy="57" r="0.8" fill="#ffffff"/>
+            <circle cx="37" cy="57" r="0.8" fill="#ffffff"/>
           </svg>
         </div>
         <span class="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-400 bg-clip-text text-transparent">Wolfpack</span>
