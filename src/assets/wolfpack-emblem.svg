@@ -1,21 +1,43 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <defs>
-    <linearGradient id="wolfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#10b981"/>
-      <stop offset="100%" style="stop-color:#0d9488"/>
-    </linearGradient>
-  </defs>
-  <!-- Stylized wolf head -->
-  <path fill="url(#wolfGrad)" d="M100 20 L140 50 L160 90 L160 130 L140 170 L100 190 L60 170 L40 130 L40 90 L60 50 Z"/>
-  <!-- Wolf face details -->
-  <path fill="#fff" d="M100 40 L120 60 L100 80 L80 60 Z"/>
-  <!-- Eyes -->
-  <ellipse fill="#fff" cx="75" cy="85" rx="12" ry="15"/>
-  <ellipse fill="#fff" cx="125" cy="85" rx="12" ry="15"/>
-  <ellipse fill="#064e3b" cx="75" cy="85" rx="6" ry="10"/>
-  <ellipse fill="#064e3b" cx="125" cy="85" rx="6" ry="10"/>
+  <!-- Background -->
+  <circle cx="100" cy="100" r="95" fill="#10b981"/>
+  <!-- Wolf head silhouette - more aggressive/wolf-like -->
+  <path fill="#047857" d="M100 15 
+    C80 15 65 25 55 35 
+    L40 20 L35 40 L50 45 
+    C40 55 35 70 40 85 
+    L25 80 L20 100 L40 100 
+    C40 115 45 130 55 140 
+    L45 155 L55 150 L70 155 
+    C85 160 95 165 100 165 
+    C105 165 115 160 130 155 
+    L145 150 L155 155 L145 140 
+    C155 130 160 115 160 100 
+    L180 100 L175 80 L160 85 
+    C165 70 160 55 150 45 
+    L165 40 L160 20 L145 35 
+    C135 25 120 15 100 15 
+    Z"/>
+  <!-- Fur/neck detail -->
+  <path fill="#065f46" d="M60 140 Q50 155 45 175 Q70 170 100 170 Q130 170 155 175 Q150 155 140 140 Z"/>
+  <!-- Eyes - more angled/savage -->
+  <path fill="#fff" d="M65 65 L85 60 L85 80 L65 75 Z"/>
+  <path fill="#fff" d="M135 65 L115 60 L115 80 L135 75 Z"/>
+  <!-- Pupils - vertical slits -->
+  <path fill="#022c22" d="M70 65 L78 62 L78 78 L70 75 Z"/>
+  <path fill="#022c22" d="M130 65 L122 62 L122 78 L130 75 Z"/>
+  <!-- Snout -->
+  <path fill="#6ee7b7" d="M100 85 L115 95 L115 120 L100 130 L85 120 L85 95 Z"/>
   <!-- Nose -->
-  <path fill="#064e3b" d="M90 130 L100 120 L110 130 L100 145 Z"/>
-  <!-- Ear accents -->
-  <path fill="#064e3b" opacity="0.3" d="M100 20 L115 50 L100 45 L85 50 Z"/>
+  <path fill="#022c22" d="M90 115 L100 108 L110 115 L100 128 Z"/>
+  <!-- Mouth -->
+  <path stroke="#022c22" stroke-width="2" fill="none" d="M100 128 L100 145 M85 140 Q100 155 115 140"/>
+  <!-- Teeth hints -->
+  <path fill="#fff" d="M90 142 L93 148 L96 142 M104 142 L107 148 L110 142"/>
+  <!-- Ears - pointed -->
+  <path fill="#047857" d="M45 30 L25 5 L55 25 Z"/>
+  <path fill="#047857" d="M155 30 L175 5 L145 25 Z"/>
+  <!-- Inner ears -->
+  <path fill="#6ee7b7" d="M48 28 L32 12 L58 25 Z"/>
+  <path fill="#6ee7b7" d="M152 28 L168 12 L142 25 Z"/>
 </svg>
