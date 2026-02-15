@@ -1,8 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Modern Design System */
+:root {
+  --font-display: 'Space Grotesk', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --gradient-brand: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+  --gradient-accent: linear-gradient(135deg, #6ee7b7 0%, #34d399 100%);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --mat-sys-primary: #10b981;
+  --mat-sys-on-primary: #ffffff;
+}
 
 /* Prevent transition on initial load */
 .no-transition,
@@ -86,37 +100,48 @@ nav {
   @apply bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300;
 }
 
-/* Enhanced Typography */
+/* Enhanced Typography with Modern Scale */
 h1, h2, h3, h4, h5, h6 {
   @apply font-extrabold tracking-tight;
+  font-family: var(--font-display);
 }
 
 h1 {
-  @apply text-5xl md:text-7xl leading-tight;
-  letter-spacing: -0.02em;
+  @apply text-5xl md:text-7xl lg:text-8xl leading-[1.1];
+  letter-spacing: -0.03em;
+  font-weight: 800;
 }
 
 h2 {
-  @apply text-4xl md:text-5xl leading-tight;
-  letter-spacing: -0.01em;
+  @apply text-4xl md:text-5xl lg:text-6xl leading-[1.2];
+  letter-spacing: -0.02em;
+  font-weight: 700;
 }
 
 h3 {
-  @apply text-2xl md:text-3xl leading-snug;
+  @apply text-2xl md:text-3xl lg:text-4xl leading-tight;
+  letter-spacing: -0.01em;
+  font-weight: 700;
 }
 
 h4 {
   @apply text-xl md:text-2xl leading-snug;
+  letter-spacing: -0.005em;
+  font-weight: 600;
 }
 
 body {
-  @apply text-base leading-relaxed;
-  font-feature-settings: 'kern' 1, 'liga' 1;
+  @apply text-base md:text-lg leading-relaxed;
+  font-family: var(--font-body);
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 p {
-  @apply mb-4;
-  max-width: 65ch;
+  @apply mb-6;
+  max-width: 72ch;
+  line-height: 1.75;
 }
 
 /* Enhanced Focus States */
@@ -145,4 +170,9 @@ a:focus-visible {
 .dark {
   --mat-sys-primary: #34D399;
   --mat-sys-on-primary: #0F172A;
+}
+
+/* Light mode override for Material button labels */
+html:not(.dark) .mdc-button__label {
+  color: #047857;
 }

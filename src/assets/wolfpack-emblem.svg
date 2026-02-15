@@ -1,43 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <!-- Background -->
-  <circle cx="100" cy="100" r="95" fill="#10b981"/>
-  <!-- Wolf head silhouette - more aggressive/wolf-like -->
-  <path fill="#047857" d="M100 15 
-    C80 15 65 25 55 35 
-    L40 20 L35 40 L50 45 
-    C40 55 35 70 40 85 
-    L25 80 L20 100 L40 100 
-    C40 115 45 130 55 140 
-    L45 155 L55 150 L70 155 
-    C85 160 95 165 100 165 
-    C105 165 115 160 130 155 
-    L145 150 L155 155 L145 140 
-    C155 130 160 115 160 100 
-    L180 100 L175 80 L160 85 
-    C165 70 160 55 150 45 
-    L165 40 L160 20 L145 35 
-    C135 25 120 15 100 15 
-    Z"/>
-  <!-- Fur/neck detail -->
-  <path fill="#065f46" d="M60 140 Q50 155 45 175 Q70 170 100 170 Q130 170 155 175 Q150 155 140 140 Z"/>
-  <!-- Eyes - more angled/savage -->
-  <path fill="#fff" d="M65 65 L85 60 L85 80 L65 75 Z"/>
-  <path fill="#fff" d="M135 65 L115 60 L115 80 L135 75 Z"/>
-  <!-- Pupils - vertical slits -->
-  <path fill="#022c22" d="M70 65 L78 62 L78 78 L70 75 Z"/>
-  <path fill="#022c22" d="M130 65 L122 62 L122 78 L130 75 Z"/>
-  <!-- Snout -->
-  <path fill="#6ee7b7" d="M100 85 L115 95 L115 120 L100 130 L85 120 L85 95 Z"/>
-  <!-- Nose -->
-  <path fill="#022c22" d="M90 115 L100 108 L110 115 L100 128 Z"/>
-  <!-- Mouth -->
-  <path stroke="#022c22" stroke-width="2" fill="none" d="M100 128 L100 145 M85 140 Q100 155 115 140"/>
-  <!-- Teeth hints -->
-  <path fill="#fff" d="M90 142 L93 148 L96 142 M104 142 L107 148 L110 142"/>
-  <!-- Ears - pointed -->
-  <path fill="#047857" d="M45 30 L25 5 L55 25 Z"/>
-  <path fill="#047857" d="M155 30 L175 5 L145 25 Z"/>
-  <!-- Inner ears -->
-  <path fill="#6ee7b7" d="M48 28 L32 12 L58 25 Z"/>
-  <path fill="#6ee7b7" d="M152 28 L168 12 L142 25 Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="20" y1="10" x2="180" y2="190">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="60%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0" y1="0" x2="200" y2="200">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="wolfGrad" x1="70" y1="60" x2="130" y2="150">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="70%" stop-color="#cbd5f5"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Badge -->
+  <circle cx="100" cy="100" r="92" fill="url(#bgGrad)"/>
+  <circle cx="100" cy="100" r="92" fill="none" stroke="url(#ringGrad)" stroke-width="3"/>
+  <circle cx="100" cy="100" r="80" fill="none" stroke="#1e293b" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Modern Wolf Head -->
+  <g transform="translate(0, 2)">
+    <!-- Ears + Head silhouette -->
+    <path d="M100 38 L126 58 L142 50 L136 78 L146 92 L128 132 L100 152 L72 132 L54 92 L64 78 L58 50 L74 58 Z"
+          fill="url(#wolfGrad)"/>
+    <!-- Inner mask (negative space) -->
+    <path d="M100 58 L118 74 L124 92 L112 120 L100 128 L88 120 L76 92 L82 74 Z"
+          fill="#0b1220"/>
+    <!-- Snout highlight -->
+    <path d="M100 94 L112 110 L100 122 L88 110 Z" fill="#e2e8f0"/>
+    <!-- Nose -->
+    <path d="M96 118 L104 118 L102 124 L98 124 Z" fill="#0f172a"/>
+    <!-- Eyes -->
+    <path d="M86 92 L96 88 L90 98 Z" fill="#38bdf8"/>
+    <path d="M114 92 L104 88 L110 98 Z" fill="#38bdf8"/>
+  </g>
+
+  <!-- Angular pack marks -->
+  <path d="M40 118 L56 110" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <path d="M160 118 L144 110" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
 </svg>

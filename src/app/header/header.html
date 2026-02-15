@@ -1,71 +1,50 @@
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-sm border-b border-slate-200/50 dark:border-slate-700/50">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-2xl border-b border-slate-200/30 dark:border-slate-800/30 shadow-sm">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <!-- Logo -->
-      <a routerLink="/" class="flex items-center gap-2 group">
-        <div class="w-10 h-10 bg-gradient-to-br from-emerald-600 to-teal-600 dark:from-emerald-500 dark:to-teal-500 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-all duration-300 shadow-md overflow-hidden">
-          <img src="/wolfpack-website/assets/wolfpack-emblem.svg" alt="Wolfpack" class="w-10 h-10"/>
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo with Modern Styling -->
+      <a routerLink="/" class="flex items-center gap-3 group">
+        <div class="relative w-12 h-12 rounded-2xl flex items-center justify-center transform group-hover:scale-105 transition-all duration-300 overflow-hidden">
+          <img src="assets/wolfpack-emblem-small.svg" alt="Wolfpack" class="w-12 h-12"/>
+          <div class="absolute inset-0 bg-gradient-brand opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity"></div>
         </div>
-        <span class="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-400 bg-clip-text text-transparent">Wolfpack</span>
+        <span class="text-2xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-brand">Wolfpack</span>
       </a>
 
-      <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center gap-2">
-        <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" 
-           class="nav-link">Home</a>
-        <a mat-button routerLink="/services" routerLinkActive="active-link" 
-           class="nav-link">Services</a>
-        <a mat-button routerLink="/about" routerLinkActive="active-link" 
-           class="nav-link">About</a>
-        <a mat-button routerLink="/blog" routerLinkActive="active-link" 
-           class="nav-link">Blog</a>
-        <a mat-button routerLink="/contact" routerLinkActive="active-link" 
-           class="nav-link">Contact</a>
+      <!-- Desktop Navigation with Modern Links -->
+      <div class="hidden md:flex items-center gap-1">
+        <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"
+           class="px-4 py-2 text-sm font-semibold text-transparent bg-clip-text bg-gradient-brand dark:text-slate-300 dark:bg-none hover:text-brand-600 dark:hover:text-brand-400 rounded-xl hover:bg-brand-50 dark:hover:bg-brand-950/30 transition-all duration-200">Home</a>
+        <a mat-button routerLink="/services" routerLinkActive="active-link"
+           class="px-4 py-2 text-sm font-semibold text-transparent bg-clip-text bg-gradient-brand dark:text-slate-300 dark:bg-none hover:text-brand-600 dark:hover:text-brand-400 rounded-xl hover:bg-brand-50 dark:hover:bg-brand-950/30 transition-all duration-200">Services</a>
+        <a mat-button routerLink="/about" routerLinkActive="active-link"
+           class="px-4 py-2 text-sm font-semibold text-transparent bg-clip-text bg-gradient-brand dark:text-slate-300 dark:bg-none hover:text-brand-600 dark:hover:text-brand-400 rounded-xl hover:bg-brand-50 dark:hover:bg-brand-950/30 transition-all duration-200">About</a>
+        <a mat-button routerLink="/blog" routerLinkActive="active-link"
+           class="px-4 py-2 text-sm font-semibold text-transparent bg-clip-text bg-gradient-brand dark:text-slate-300 dark:bg-none hover:text-brand-600 dark:hover:text-brand-400 rounded-xl hover:bg-brand-50 dark:hover:bg-brand-950/30 transition-all duration-200">Blog</a>
+        <a mat-button routerLink="/contact" routerLinkActive="active-link"
+           class="px-4 py-2 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 rounded-xl hover:bg-brand-50 dark:hover:bg-brand-950/30 transition-all duration-200">Contact</a>
         
-        <!-- Enhanced Dark Mode Toggle with better positioning -->
-        <div class="flex items-center ml-6 pl-6 border-l border-slate-200 dark:border-slate-700">
+        <!-- Modern Dark Mode Toggle -->
+        <div class="flex items-center ml-6 pl-6 border-l border-slate-200/50 dark:border-slate-800/50">
           <button
             (click)="toggleDarkMode()"
-            class="group relative inline-flex h-9 w-16 items-center rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 hover:scale-105"
-            [ngClass]="{
-              'bg-gradient-to-r from-slate-700 to-slate-800': darkMode(),
-              'bg-gradient-to-r from-slate-200 to-slate-300': !darkMode()
-            }"
+            class="group relative inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
             role="switch"
             [attr.aria-checked]="darkMode()"
             [attr.aria-label]="darkMode() ? 'Switch to light mode' : 'Switch to dark mode'"
           >
-            <!-- Toggle Circle with Icon and glow effect -->
-            <span
-              class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white dark:bg-slate-900 shadow-lg transform transition-all duration-300 ease-out"
-              [ngClass]="{
-                'translate-x-8 shadow-emerald-500/50': darkMode(),
-                'translate-x-1 shadow-amber-500/50': !darkMode()
-              }"
-            >
-              <!-- Sun Icon (Light Mode) -->
-              <lucide-icon 
-                *ngIf="!darkMode()"
-                name="sun" 
-                class="h-4 w-4 text-amber-500 animate-in spin-in-0 duration-300"
-              ></lucide-icon>
-              
-              <!-- Moon Icon (Dark Mode) -->
-              <lucide-icon 
-                *ngIf="darkMode()"
-                name="moon" 
-                class="h-4 w-4 text-emerald-400 animate-in spin-in-0 duration-300"
-              ></lucide-icon>
-            </span>
-            
-            <!-- Background stars for dark mode -->
-            <span 
+            <!-- Sun Icon (Light Mode) -->
+            <lucide-icon
+              *ngIf="!darkMode()"
+              name="sun"
+              class="h-5 w-5 text-amber-500"
+            ></lucide-icon>
+
+            <!-- Moon Icon (Dark Mode) -->
+            <lucide-icon
               *ngIf="darkMode()"
-              class="absolute inset-0 flex items-center justify-start pl-2 pointer-events-none"
-            >
-              <span class="w-1 h-1 bg-emerald-300 rounded-full opacity-60"></span>
-              <span class="w-1 h-1 bg-emerald-400 rounded-full opacity-40 ml-1"></span>
-            </span>
+              name="moon"
+              class="h-5 w-5 text-brand-400"
+            ></lucide-icon>
           </button>
         </div>
       </div>
@@ -75,39 +54,27 @@
         <!-- Mobile Dark Mode Toggle -->
         <button
           (click)="toggleDarkMode()"
-          class="group relative inline-flex h-8 w-14 items-center rounded-full transition-all duration-300 hover:scale-105"
-          [ngClass]="{
-            'bg-gradient-to-r from-slate-700 to-slate-800': darkMode(),
-            'bg-gradient-to-r from-slate-200 to-slate-300': !darkMode()
-          }"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all duration-300"
           role="switch"
           [attr.aria-checked]="darkMode()"
           [attr.aria-label]="darkMode() ? 'Switch to light mode' : 'Switch to dark mode'"
         >
-          <span
-            class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white dark:bg-slate-900 shadow-lg transform transition-all duration-300 ease-out"
-            [ngClass]="{
-              'translate-x-7': darkMode(),
-              'translate-x-1': !darkMode()
-            }"
-          >
-            <lucide-icon 
-              *ngIf="!darkMode()"
-              name="sun" 
-              class="h-3.5 w-3.5 text-amber-500"
-            ></lucide-icon>
-            <lucide-icon 
-              *ngIf="darkMode()"
-              name="moon" 
-              class="h-3.5 w-3.5 text-emerald-400"
-            ></lucide-icon>
-          </span>
+          <lucide-icon
+            *ngIf="!darkMode()"
+            name="sun"
+            class="h-5 w-5 text-amber-500"
+          ></lucide-icon>
+          <lucide-icon
+            *ngIf="darkMode()"
+            name="moon"
+            class="h-5 w-5 text-brand-400"
+          ></lucide-icon>
         </button>
-        
-        <button 
-          mat-icon-button 
-          (click)="toggleMenu()" 
-          class="text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
+
+        <button
+          mat-icon-button
+          (click)="toggleMenu()"
+          class="h-10 w-10 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors"
         >
           <lucide-icon [name]="menuOpen ? 'x' : 'menu'" class="w-6 h-6"></lucide-icon>
         </button>
@@ -122,22 +89,22 @@
       <div class="flex flex-col space-y-2">
         <a routerLink="/" routerLinkActive="active-mobile" [routerLinkActiveOptions]="{exact: true}"
            (click)="toggleMenu()"
-           class="px-4 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-200">
+           class="px-4 py-2 rounded-lg text-transparent bg-clip-text bg-gradient-brand dark:text-slate-300 dark:bg-none hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-200">
           Home
         </a>
         <a routerLink="/services" routerLinkActive="active-mobile"
            (click)="toggleMenu()"
-           class="px-4 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-200">
+           class="px-4 py-2 rounded-lg text-transparent bg-clip-text bg-gradient-brand dark:text-slate-300 dark:bg-none hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-200">
           Services
         </a>
         <a routerLink="/about" routerLinkActive="active-mobile"
            (click)="toggleMenu()"
-           class="px-4 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-200">
+           class="px-4 py-2 rounded-lg text-transparent bg-clip-text bg-gradient-brand dark:text-slate-300 dark:bg-none hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-200">
           About
         </a>
         <a routerLink="/blog" routerLinkActive="active-mobile"
            (click)="toggleMenu()"
-           class="px-4 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-200">
+           class="px-4 py-2 rounded-lg text-transparent bg-clip-text bg-gradient-brand dark:text-slate-300 dark:bg-none hover:bg-emerald-50 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-200">
           Blog
         </a>
         <a routerLink="/contact" routerLinkActive="active-mobile"
@@ -151,4 +118,4 @@
 </nav>
 
 <!-- Spacer to prevent content from going under fixed nav -->
-<div class="h-16"></div>
+<div class="h-20"></div>
