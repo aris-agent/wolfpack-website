@@ -9,7 +9,8 @@ import {
   LayoutGrid, Star, Handshake, Lightbulb, Users2, Calendar,
   User, Mail, MessageSquare, Send, Clock, Award, Twitter,
   Github, Linkedin, ArrowLeft, Cpu, Sparkles, Globe, Code,
-  Cloud, ShieldCheck, RefreshCw, MapPin, Phone
+  Cloud, ShieldCheck, RefreshCw, MapPin, Phone, Brain, Repeat,
+  Rocket, Trophy, Layers, Workflow, Microscope, Target
 } from 'lucide-angular';
 
 import { routes } from './app.routes';
@@ -54,7 +55,15 @@ export const appConfig: ApplicationConfig = {
         ShieldCheck,
         RefreshCw,
         MapPin,
-        Phone
+        Phone,
+        Brain,
+        Repeat,
+        Rocket,
+        Trophy,
+        Layers,
+        Workflow,
+        Microscope,
+        Target
       })
     }
   ]
