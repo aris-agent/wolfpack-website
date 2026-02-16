@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <style>
+      .g-primary { fill: #10b981; }
+      .g-secondary { fill: #047857; }
+      .g-dark { fill: #022c22; }
+    </style>
+  </defs>
+
+  <!-- Single sharp wolf head -->
+  <g>
+    <!-- Outer head + ears -->
+    <path class="g-primary" d="M100 16 L130 42 L150 34 L144 70 L162 92 L144 134 L100 158 L56 134 L38 92 L56 70 L50 34 L70 42 Z"/>
+    <!-- Face mask -->
+    <path class="g-secondary" d="M100 44 L120 64 L128 92 L112 122 L100 130 L88 122 L72 92 L80 64 Z"/>
+    <!-- Cheek highlights -->
+    <path class="g-primary" d="M74 92 L86 102 L78 116 L66 104 Z"/>
+    <path class="g-primary" d="M126 92 L134 104 L122 116 L114 102 Z"/>
+    <!-- Eyes -->
+    <path class="g-primary" d="M84 86 L98 80 L90 94 Z"/>
+    <path class="g-primary" d="M116 86 L102 80 L110 94 Z"/>
+    <!-- Snout -->
+    <path class="g-primary" d="M88 114 L112 114 L104 130 L96 130 Z"/>
+    <!-- Nose -->
+    <path class="g-dark" d="M94 128 L106 128 L102 136 L98 136 Z"/>
+  </g>
+</svg>

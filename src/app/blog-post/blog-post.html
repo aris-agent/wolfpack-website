@@ -1,40 +1,86 @@
-<div class="min-h-screen bg-white dark:bg-slate-900 py-20">
-  <div class="container max-w-4xl">
-    <!-- Team Wolfpack Icon -->
-    <div class="text-center mb-8">
-      <svg class="w-16 h-16 mx-auto text-emerald-600 dark:text-emerald-400" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <!-- Wolf head silhouette -->
-        <path d="M50 20 
-                 Q40 10 30 20 
-                 Q25 30 30 40 
-                 Q35 45 40 40 
-                 Q45 50 50 45 
-                 Q55 50 60 40 
-                 Q65 45 70 40 
-                 Q75 30 70 20 
-                 Q60 10 50 20 Z" 
-              fill="currentColor"/>
-        
-        <!-- Eyes -->
-        <circle cx="40" cy="30" r="2" fill="white"/>
-        <circle cx="60" cy="30" r="2" fill="white"/>
-        
-        <!-- Nose -->
-        <polygon points="48,38 52,38 50,42" fill="white"/>
-        
-        <!-- Ears -->
-        <polygon points="35,20 40,15 45,20" fill="currentColor"/>
-        <polygon points="55,20 60,15 65,20" fill="currentColor"/>
-      </svg>
+<!-- MODERN BLOG POST PAGE WITH GLASS MORPHISM -->
+<section class="relative min-h-screen overflow-hidden bg-gradient-to-br from-white via-brand-50/30 to-brand-100/20 dark:from-slate-950 dark:via-slate-900 dark:to-slate-900">
+
+  <!-- Enhanced Background -->
+  <div class="absolute inset-0 bg-mesh-gradient"></div>
+
+  <!-- Animated Background Orbs -->
+  <div class="absolute inset-0 overflow-hidden opacity-15 dark:opacity-10">
+    <div class="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-gradient-to-br from-brand-400 to-brand-600 rounded-full blur-3xl animate-blob"></div>
+    <div class="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-gradient-to-br from-cyan-400 to-teal-600 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+  </div>
+
+  <!-- Grid Pattern -->
+  <div class="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]" style="background-image: radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0); background-size: 48px 48px;"></div>
+
+  <div class="container relative z-10 py-24 lg:py-32 max-w-4xl">
+    <!-- Back Button -->
+    <div class="mb-10">
+      <a routerLink="/blog" class="group inline-flex items-center gap-2 px-4 py-2 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-xl border border-white/50 dark:border-slate-700/50 text-slate-700 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 font-medium transition-all shadow-glass hover:shadow-glass-lg">
+        <lucide-icon name="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></lucide-icon>
+        <span>Back to Blog</span>
+      </a>
     </div>
-    <article class="card prose prose-lg dark:prose-invert max-w-none">
-      <markdown [src]="src"></markdown>
-    </article>
-    <div class="mt-8 text-center">
-      <a routerLink="/blog" class="inline-flex items-center text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-semibold">
-        <lucide-icon name="arrow-left" class="mr-2" [size]="20"></lucide-icon>
-        Back to Blog
+
+    <!-- Icon Header -->
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-brand rounded-2xl shadow-brand mb-6">
+        <svg class="w-10 h-10 text-white" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <!-- Stylized Wolf Head -->
+          <path d="M50 20 Q40 10 30 20 Q25 30 30 40 Q35 45 40 40 Q45 50 50 45 Q55 50 60 40 Q65 45 70 40 Q75 30 70 20 Q60 10 50 20 Z" fill="currentColor"/>
+          <circle cx="40" cy="30" r="2" fill="white"/>
+          <circle cx="60" cy="30" r="2" fill="white"/>
+          <polygon points="48,38 52,38 50,42" fill="white"/>
+          <polygon points="35,20 40,15 45,20" fill="currentColor"/>
+          <polygon points="55,20 60,15 65,20" fill="currentColor"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Article Card -->
+    <div class="relative group">
+      <div class="absolute inset-0 bg-gradient-brand rounded-[32px] opacity-10 blur-2xl"></div>
+      <article class="relative bg-white/80 dark:bg-slate-800/80 backdrop-blur-2xl rounded-[32px] border border-white/50 dark:border-slate-700/50 shadow-glass-lg p-8 lg:p-12">
+        <div class="prose prose-lg dark:prose-invert max-w-none
+          prose-headings:font-black prose-headings:text-slate-900 dark:prose-headings:text-white
+          prose-h1:text-4xl prose-h1:lg:text-5xl prose-h1:mb-8 prose-h1:text-transparent prose-h1:bg-clip-text prose-h1:bg-gradient-brand
+          prose-h2:text-2xl prose-h2:lg:text-3xl prose-h2:mt-12 prose-h2:mb-6
+          prose-p:text-slate-600 dark:prose-p:text-slate-300 prose-p:leading-relaxed
+          prose-a:text-brand-600 dark:prose-a:text-brand-400 prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
+          prose-strong:text-slate-900 dark:prose-strong:text-white
+          prose-code:bg-brand-50 dark:prose-code:bg-brand-900/30 prose-code:text-brand-700 dark:prose-code:text-brand-300 prose-code:px-2 prose-code:py-1 prose-code:rounded-lg prose-code:font-medium
+          prose-pre:bg-slate-900 prose-pre:rounded-2xl prose-pre:shadow-lg
+          prose-blockquote:border-l-4 prose-blockquote:border-brand-500 prose-blockquote:bg-brand-50/50 dark:prose-blockquote:bg-brand-900/20 prose-blockquote:rounded-r-xl prose-blockquote:py-4 prose-blockquote:pl-6
+          prose-ul:marker:text-brand-500 prose-ol:marker:text-brand-500
+          prose-img:rounded-2xl prose-img:shadow-lg">
+          <markdown [src]="src"></markdown>
+        </div>
+      </article>
+    </div>
+
+    <!-- Share & Navigation -->
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <!-- Share Buttons -->
+      <div class="flex items-center gap-3">
+        <span class="text-sm font-medium text-slate-600 dark:text-slate-400">Share:</span>
+        <div class="flex gap-2">
+          <button class="w-10 h-10 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-xl border border-white/50 dark:border-slate-700/50 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-white/80 dark:hover:bg-slate-800/80 transition-all shadow-glass">
+            <lucide-icon name="twitter" class="w-4 h-4"></lucide-icon>
+          </button>
+          <button class="w-10 h-10 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-xl border border-white/50 dark:border-slate-700/50 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-white/80 dark:hover:bg-slate-800/80 transition-all shadow-glass">
+            <lucide-icon name="linkedin" class="w-4 h-4"></lucide-icon>
+          </button>
+          <button class="w-10 h-10 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-xl border border-white/50 dark:border-slate-700/50 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-white/80 dark:hover:bg-slate-800/80 transition-all shadow-glass">
+            <lucide-icon name="link" class="w-4 h-4"></lucide-icon>
+          </button>
+        </div>
+      </div>
+
+      <!-- Back to Blog -->
+      <a routerLink="/blog" class="group inline-flex items-center gap-2 px-6 py-3 bg-gradient-brand text-white font-bold rounded-xl shadow-brand hover:shadow-brand-lg transform hover:-translate-y-0.5 transition-all">
+        <span>More Articles</span>
+        <lucide-icon name="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></lucide-icon>
       </a>
     </div>
   </div>
-</div>
+</section>

@@ -1,137 +1,234 @@
-<div class="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50/30 to-teal-50/30 dark:from-slate-900 dark:via-emerald-900/20 dark:to-teal-900/20 py-20">
-  <div class="container">
-    <!-- Header -->
-    <div class="text-center mb-12">
-      <h1 class="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-        Get in Touch
+<!-- MODERN CONTACT PAGE WITH GLASS MORPHISM -->
+<section class="relative min-h-screen overflow-hidden bg-gradient-to-br from-white via-brand-50/30 to-brand-100/20 dark:from-slate-950 dark:via-slate-900 dark:to-slate-900">
+
+  <!-- Enhanced Background -->
+  <div class="absolute inset-0 bg-mesh-gradient"></div>
+
+  <!-- Animated Background Orbs -->
+  <div class="absolute inset-0 overflow-hidden opacity-20 dark:opacity-10">
+    <div class="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-gradient-to-br from-brand-400 to-brand-600 rounded-full blur-3xl animate-blob"></div>
+    <div class="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-gradient-to-br from-cyan-400 to-teal-600 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+  </div>
+
+  <!-- Grid Pattern -->
+  <div class="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]" style="background-image: radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0); background-size: 48px 48px;"></div>
+
+  <div class="container relative z-10 py-24 lg:py-32">
+    <!-- Hero Header -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl border border-brand-200/50 dark:border-brand-800/50 shadow-glass mb-8">
+        <div class="w-2 h-2 rounded-full bg-gradient-brand animate-pulse"></div>
+        <span class="text-sm font-semibold text-slate-900 dark:text-white tracking-wide">Let's Connect</span>
+      </div>
+
+      <h1 class="text-5xl lg:text-7xl font-black mb-6 leading-tight">
+        <span class="text-slate-900 dark:text-white">Get in</span>
+        <span class="text-transparent bg-clip-text bg-gradient-brand"> Touch</span>
       </h1>
-      <p class="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+      <p class="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
         Ready to start your project? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-      <!-- Contact Form -->
-      <div class="card">
-        <h2 class="text-2xl font-bold mb-6 text-slate-900 dark:text-slate-100">Send us a Message</h2>
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
-          <mat-form-field appearance="outline" class="w-full">
-            <mat-label>Name</mat-label>
-            <input matInput formControlName="name" required>
-            <lucide-icon name="user" class="text-slate-400" [size]="20"></lucide-icon>
-            <mat-error *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
-              Name is required
-            </mat-error>
-          </mat-form-field>
+    <div class="grid lg:grid-cols-5 gap-10 max-w-7xl mx-auto">
 
-          <mat-form-field appearance="outline" class="w-full">
-            <mat-label>Email</mat-label>
-            <input matInput type="email" formControlName="email" required>
-            <lucide-icon name="mail" class="text-slate-400" [size]="20"></lucide-icon>
-            <mat-error *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
-              Please enter a valid email
-            </mat-error>
-          </mat-form-field>
+      <!-- Contact Form - Modern Glass Design -->
+      <div class="lg:col-span-3">
+        <div class="relative group">
+          <div class="absolute inset-0 bg-gradient-brand rounded-[32px] opacity-10 blur-2xl group-hover:opacity-15 transition-opacity"></div>
+          <div class="relative bg-white/80 dark:bg-slate-800/80 backdrop-blur-2xl rounded-[32px] border border-white/50 dark:border-slate-700/50 shadow-glass-lg p-8 lg:p-10">
 
-          <mat-form-field appearance="outline" class="w-full">
-            <mat-label>Message</mat-label>
-            <textarea matInput formControlName="message" rows="5" required></textarea>
-            <lucide-icon name="message-square" class="text-slate-400" [size]="20"></lucide-icon>
-            <mat-error *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
-              Message is required
-            </mat-error>
-          </mat-form-field>
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-14 h-14 bg-gradient-brand rounded-2xl flex items-center justify-center shadow-brand">
+                <lucide-icon name="send" class="w-7 h-7 text-white"></lucide-icon>
+              </div>
+              <div>
+                <h2 class="text-2xl font-black text-slate-900 dark:text-white">Send us a Message</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm">We'll get back to you within 24 hours</p>
+              </div>
+            </div>
 
-          <button type="submit" [disabled]="contactForm.invalid" class="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed">
-            <span class="flex items-center justify-center">
-              <lucide-icon name="send" class="mr-2" [size]="20"></lucide-icon>
-              Send Message
-            </span>
-          </button>
-        </form>
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
+              <!-- Name & Email Row -->
+              <div class="grid md:grid-cols-2 gap-6">
+                <!-- Name Input -->
+                <div class="relative">
+                  <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Your Name</label>
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                      <lucide-icon name="user" class="w-5 h-5 text-slate-400"></lucide-icon>
+                    </div>
+                    <input
+                      type="text"
+                      formControlName="name"
+                      placeholder="John Doe"
+                      class="w-full pl-12 pr-4 py-4 bg-white/50 dark:bg-slate-900/50 border-2 border-slate-200 dark:border-slate-700 rounded-2xl text-slate-900 dark:text-white placeholder-slate-400 focus:border-brand-500 dark:focus:border-brand-400 focus:ring-4 focus:ring-brand-500/20 dark:focus:ring-brand-400/20 transition-all duration-300 outline-none font-medium"
+                    />
+                  </div>
+                  <p *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="mt-2 text-sm text-red-500 font-medium">
+                    Name is required
+                  </p>
+                </div>
+
+                <!-- Email Input -->
+                <div class="relative">
+                  <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Email Address</label>
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                      <lucide-icon name="mail" class="w-5 h-5 text-slate-400"></lucide-icon>
+                    </div>
+                    <input
+                      type="email"
+                      formControlName="email"
+                      placeholder="john@example.com"
+                      class="w-full pl-12 pr-4 py-4 bg-white/50 dark:bg-slate-900/50 border-2 border-slate-200 dark:border-slate-700 rounded-2xl text-slate-900 dark:text-white placeholder-slate-400 focus:border-brand-500 dark:focus:border-brand-400 focus:ring-4 focus:ring-brand-500/20 dark:focus:ring-brand-400/20 transition-all duration-300 outline-none font-medium"
+                    />
+                  </div>
+                  <p *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="mt-2 text-sm text-red-500 font-medium">
+                    Please enter a valid email
+                  </p>
+                </div>
+              </div>
+
+              <!-- Message Textarea -->
+              <div class="relative">
+                <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Your Message</label>
+                <div class="relative">
+                  <textarea
+                    formControlName="message"
+                    rows="5"
+                    placeholder="Tell us about your project, goals, and timeline..."
+                    class="w-full px-4 py-4 bg-white/50 dark:bg-slate-900/50 border-2 border-slate-200 dark:border-slate-700 rounded-2xl text-slate-900 dark:text-white placeholder-slate-400 focus:border-brand-500 dark:focus:border-brand-400 focus:ring-4 focus:ring-brand-500/20 dark:focus:ring-brand-400/20 transition-all duration-300 outline-none font-medium resize-none"
+                  ></textarea>
+                </div>
+                <p *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="mt-2 text-sm text-red-500 font-medium">
+                  Message is required
+                </p>
+              </div>
+
+              <!-- Submit Button -->
+              <button
+                type="submit"
+                [disabled]="contactForm.invalid"
+                class="group w-full relative overflow-hidden bg-gradient-brand text-white font-bold py-5 px-8 rounded-2xl shadow-brand hover:shadow-brand-lg transform hover:-translate-y-1 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:transform-none"
+              >
+                <span class="relative z-10 flex items-center justify-center gap-3 text-lg">
+                  <lucide-icon name="send" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></lucide-icon>
+                  Send Message
+                </span>
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-700 to-brand-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
 
-      <!-- Contact Info -->
-      <div class="space-y-6">
-        <div class="card">
-          <h2 class="text-2xl font-bold mb-6 text-slate-900 dark:text-slate-100">Why Work With Us?</h2>
-          <div class="space-y-4">
-            <div class="flex items-start">
-              <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
-                <lucide-icon name="clock" class="text-white" [size]="24"></lucide-icon>
+      <!-- Info Cards Column -->
+      <div class="lg:col-span-2 space-y-6">
+
+        <!-- Why Work With Us Card -->
+        <div class="relative group">
+          <div class="absolute inset-0 bg-gradient-to-br from-cyan-400 to-teal-600 rounded-3xl opacity-10 blur-xl group-hover:opacity-20 transition-opacity"></div>
+          <div class="relative bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl rounded-3xl border border-white/50 dark:border-slate-700/50 shadow-glass p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg">
+                <lucide-icon name="sparkles" class="w-6 h-6 text-white"></lucide-icon>
               </div>
-              <div>
-                <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Fast Response</h3>
-                <p class="text-slate-600 dark:text-slate-300 text-sm">We typically respond within 24 hours</p>
-              </div>
+              <h3 class="text-xl font-black text-slate-900 dark:text-white">Why Work With Us?</h3>
             </div>
 
-            <div class="flex items-start">
-              <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
-                <lucide-icon name="award" class="text-white" [size]="24"></lucide-icon>
+            <div class="space-y-4">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-brand-100 dark:bg-brand-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <lucide-icon name="clock" class="w-5 h-5 text-brand-600 dark:text-brand-400"></lucide-icon>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white mb-1">Fast Response</h4>
+                  <p class="text-slate-600 dark:text-slate-400 text-sm">We typically respond within 24 hours</p>
+                </div>
               </div>
-              <div>
-                <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Expert Consultation</h3>
-                <p class="text-slate-600 dark:text-slate-300 text-sm">Free initial consultation to discuss your needs</p>
-              </div>
-            </div>
 
-            <div class="flex items-start">
-              <div class="w-12 h-12 bg-gradient-to-br from-slate-600 to-slate-700 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
-                <lucide-icon name="handshake" class="text-white" [size]="24"></lucide-icon>
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-cyan-100 dark:bg-cyan-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <lucide-icon name="award" class="w-5 h-5 text-cyan-600 dark:text-cyan-400"></lucide-icon>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white mb-1">Expert Consultation</h4>
+                  <p class="text-slate-600 dark:text-slate-400 text-sm">Free initial consultation to discuss your needs</p>
+                </div>
               </div>
-              <div>
-                <h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Flexible Engagement</h3>
-                <p class="text-slate-600 dark:text-slate-300 text-sm">Project-based or ongoing partnerships</p>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-slate-100 dark:bg-slate-700/50 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <lucide-icon name="handshake" class="w-5 h-5 text-slate-600 dark:text-slate-400"></lucide-icon>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white mb-1">Flexible Engagement</h4>
+                  <p class="text-slate-600 dark:text-slate-400 text-sm">Project-based or ongoing partnerships</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="card bg-gradient-to-br from-emerald-600 to-teal-600 text-white">
-          <h3 class="text-xl font-bold mb-4">Ready to Start?</h3>
-          <p class="mb-4">
-            Schedule a free 30-minute consultation to discuss your project requirements and how we can help.
-          </p>
-          <div class="flex items-center">
-            <lucide-icon name="check-circle-2" class="mr-2" [size]="20"></lucide-icon>
-            <span>No commitment required</span>
+        <!-- Ready to Start Card -->
+        <div class="relative overflow-hidden">
+          <div class="bg-gradient-brand rounded-3xl p-8 text-white">
+            <div class="absolute inset-0 overflow-hidden">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+              <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
+            </div>
+            <div class="relative">
+              <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
+                <lucide-icon name="rocket" class="w-6 h-6 text-white"></lucide-icon>
+              </div>
+              <h3 class="text-xl font-black mb-3">Ready to Start?</h3>
+              <p class="text-white/90 mb-4">
+                Schedule a free 30-minute consultation to discuss your project requirements and how we can help.
+              </p>
+              <div class="flex items-center gap-2 text-white/90">
+                <lucide-icon name="check-circle" class="w-5 h-5"></lucide-icon>
+                <span class="font-medium">No commitment required</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="card">
-          <h3 class="text-xl font-bold mb-4 text-slate-900 dark:text-slate-100">What Happens Next?</h3>
-          <div class="space-y-3">
-            <div class="flex items-start">
-              <div class="w-8 h-8 bg-emerald-100 dark:bg-emerald-900 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center flex-shrink-0 mr-3 font-bold">
-                1
+        <!-- What Happens Next Card -->
+        <div class="relative group">
+          <div class="absolute inset-0 bg-gradient-to-br from-violet-400 to-purple-600 rounded-3xl opacity-10 blur-xl group-hover:opacity-20 transition-opacity"></div>
+          <div class="relative bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl rounded-3xl border border-white/50 dark:border-slate-700/50 shadow-glass p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                <lucide-icon name="list-checks" class="w-6 h-6 text-white"></lucide-icon>
               </div>
-              <div>
-                <p class="text-slate-700 dark:text-slate-300 text-sm">We review your message and requirements</p>
-              </div>
+              <h3 class="text-xl font-black text-slate-900 dark:text-white">What Happens Next?</h3>
             </div>
-            <div class="flex items-start">
-              <div class="w-8 h-8 bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 rounded-full flex items-center justify-center flex-shrink-0 mr-3 font-bold">
-                2
+
+            <div class="space-y-4">
+              <div class="flex items-center gap-4">
+                <div class="w-8 h-8 bg-gradient-brand rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <span class="text-white font-bold text-sm">1</span>
+                </div>
+                <p class="text-slate-700 dark:text-slate-300 text-sm font-medium">We review your message and requirements</p>
               </div>
-              <div>
-                <p class="text-slate-700 dark:text-slate-300 text-sm">Schedule a consultation call</p>
+              <div class="flex items-center gap-4">
+                <div class="w-8 h-8 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <span class="text-white font-bold text-sm">2</span>
+                </div>
+                <p class="text-slate-700 dark:text-slate-300 text-sm font-medium">Schedule a consultation call</p>
               </div>
-            </div>
-            <div class="flex items-start">
-              <div class="w-8 h-8 bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-full flex items-center justify-center flex-shrink-0 mr-3 font-bold">
-                3
+              <div class="flex items-center gap-4">
+                <div class="w-8 h-8 bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <span class="text-white font-bold text-sm">3</span>
+                </div>
+                <p class="text-slate-700 dark:text-slate-300 text-sm font-medium">Receive a custom proposal and timeline</p>
               </div>
-              <div>
-                <p class="text-slate-700 dark:text-slate-300 text-sm">Receive a custom proposal and timeline</p>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <div class="w-8 h-8 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full flex items-center justify-center flex-shrink-0 mr-3 font-bold">
-                4
-              </div>
-              <div>
-                <p class="text-slate-700 dark:text-slate-300 text-sm">Kick off your project!</p>
+              <div class="flex items-center gap-4">
+                <div class="w-8 h-8 bg-gradient-to-br from-orange-400 to-amber-500 rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <span class="text-white font-bold text-sm">4</span>
+                </div>
+                <p class="text-slate-700 dark:text-slate-300 text-sm font-medium">Kick off your project! 🚀</p>
               </div>
             </div>
           </div>
@@ -139,4 +236,4 @@
       </div>
     </div>
   </div>
-</div>
+</section>

@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && cp -r docs/browser/* docs/",
-    "build:gh-pages": "ng build --configuration production --base-href /wolfpack-website/ && cp -r docs/browser/* docs/ && rm -rf docs/browser",
+    "build": "ng build",
+    "build:gh-pages": "ng build --configuration production --base-href /wolfpack-website/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
